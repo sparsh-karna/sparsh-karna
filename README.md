@@ -24,14 +24,6 @@ I'm a second-year B.Tech student in Computer Science (Data Science) at VIT Chenn
 
 ---
 
-## 🏆 Achievements
-
-- 🧠 **Google Summer of Code 2025** — QC-Devs, hybrid solver for NICE.jl  
-- 🥈 **Runner-up @ BITS Goa Wissen Code Storm 2024** — Led Bodhini development  
-- 📄 **IEEE Xplore 2024 Publication** — *Li-ion battery SOC estimation via polynomial modeling*
-
----
-
 ## 📫 Get in Touch
 
 - 📧 Email: [sparsh2005karna@gmail.com](mailto:sparsh2005karna@gmail.com)  
