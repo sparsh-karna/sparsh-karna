@@ -1,0 +1,86 @@
+name: Update README cards
+
+on:
+  schedule:
+    # Runs daily at 3:00 AM UTC (8:30 AM IST)
+    - cron: "0 3 * * *"
+  workflow_dispatch: # Manual trigger from Actions tab
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/grs.yml" # Re-run if this workflow changes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ── Stats Card ──────────────────────────────────────────
+      - name: Generate stats card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&icon_color=58a6ff&include_all_commits=true&count_private=true
+          path: profile/stats.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # ── Top Languages Card ─────────────────────────────────
+      - name: Generate top-langs card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: >-
+            username=${{ github.repository_owner }}&layout=compact&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&hide=html,css,scss&langs_count=8
+          path: profile/top-langs.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # ── Repo Pin Cards ─────────────────────────────────────
+      - name: Generate AnalyzeX pin
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: pin
+          options: >-
+            username=${{ github.repository_owner }}&repo=AnalyzeX&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&icon_color=58a6ff
+          path: profile/pin-analyzex.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Generate Bodhini pin
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: pin
+          options: >-
+            username=${{ github.repository_owner }}&repo=AiQOD-RAG-Code_Blooded&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&icon_color=58a6ff
+          path: profile/pin-bodhini.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Generate MandelbrotSet pin
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: pin
+          options: >-
+            username=${{ github.repository_owner }}&repo=MandelbrotSet&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&icon_color=58a6ff
+          path: profile/pin-mandelbrot.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Generate LegalLookup pin
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: pin
+          options: >-
+            username=${{ github.repository_owner }}&repo=LegalLookup&hide_border=true&bg_color=0d1117&title_color=ADC6FF&text_color=c9d1d9&icon_color=58a6ff
+          path: profile/pin-legallookup.svg
+          token: ${{ secrets.GRS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # ── Commit & Push ──────────────────────────────────────
+      - name: Commit updated SVGs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "chore: update README stat cards [skip ci]" || exit 0
+          git push
