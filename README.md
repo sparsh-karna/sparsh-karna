@@ -8,7 +8,7 @@
 <div align="center">
 
 <a href="https://sparshkarna.dev">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=ADC6FF&center=true&vCenter=true&repeat=true&width=580&height=40&lines=%24+sparsh_karna+--init;Computational+Developer+%7C+AI+%C3%97+Science" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=ADC6FF&center=true&vCenter=true&repeat=true&width=750&height=40&lines=%24+sparsh_karna+--init;Computational+Developer+%7C+AI+%C3%97+Science" alt="Typing SVG" />
 </a>
 
 <br/>
