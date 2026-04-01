@@ -2,13 +2,9 @@ name: Update README cards
 
 on:
   schedule:
-    # Runs daily at 3:00 AM UTC (8:30 AM IST)
-    - cron: "0 3 * * *"
+    # Runs every 2 hours to catch recent activity
+    - cron: "0 */2 * * *"
   workflow_dispatch: # Manual trigger from Actions tab
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/grs.yml" # Re-run if this workflow changes
 
 jobs:
   build:
