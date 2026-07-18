@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Sparsh Karna's GitHub Stats, Rank: C+</title>
-        <desc id="descId">Total Stars Earned: 2, Total Commits  : 1066, Total PRs: 20, Total Issues: 2, Contributed to (last year): 12</desc>
+        <desc id="descId">Total Stars Earned: 2, Total Commits  : 1106, Total PRs: 20, Total Issues: 2, Contributed to (last year): 12</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 198.91014317484476;
+        stroke-dashoffset: 198.3630397961278;
       }
     }
   
